@@ -10,7 +10,7 @@ from prometheus_client import Gauge, start_http_server
 from prometheus_client.core import REGISTRY, GaugeMetricFamily
 
 
-ADDR = os.getenv('LISTEN_ADDRESS', 'localhost')
+ADDR = os.getenv('LISTEN_ADDRESS', '0.0.0.0')
 PORT = int(os.getenv('LISTEN_PORT', 9180))
 CMD = os.path.join(os.getenv('EXEC_PATH', '/usr/bin/'), 'fail2ban-client')
 COMP = re.compile(r'\s([a-zA-Z\s]+):\t([a-zA-Z0-9-,\s]+)\n')
